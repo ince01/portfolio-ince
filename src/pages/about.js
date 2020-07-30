@@ -1,28 +1,33 @@
 import React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
-import {
-  FaTwitter as Twitter,
-  FaGithub as Github,
-  FaLinkedin as Linkedin,
-  FaFacebook as Facebook,
-  FaEnvelope as Mail,
-} from 'react-icons/fa';
 
+import Html from '../images/techIcons/html.svg';
+import Css from '../images/techIcons/css.svg';
+import Javascript from '../images/techIcons/js.svg';
+import Reactjs from '../images/techIcons/reactjs.svg';
+import Nodejs from '../images/techIcons/nodejs.svg';
+import Mongodb from '../images/techIcons/mongodb.svg';
+import Postgres from '../images/techIcons/postgres.svg';
+import Jest from '../images/techIcons/jest.svg';
+import Graphql from '../images/techIcons/graphql.svg';
+import Amazon from '../images/techIcons/amazon.svg';
+import Redux from '../images/techIcons/redux.svg';
+import Apollo from '../images/techIcons/apollo.svg';
+import Heroku from '../images/techIcons/heroku.svg';
+import Netlify from '../images/techIcons/netlify.svg';
+import Docker from '../images/techIcons/docker.svg';
+import Sentry from '../images/techIcons/sentry.svg';
+import Redis from '../images/techIcons/redis.svg';
+import Jenkins from '../images/techIcons/jenkins.svg';
+import Webpack from '../images/techIcons/webpack.svg';
 import Layout from '../components/Layout';
 import SEO from '../components/SEO';
 
 const ABoutPage = () => {
-  const { datoCmsSocialProfile, datoCmsHome } = useStaticQuery(graphql`
+  const { datoCmsAbout } = useStaticQuery(graphql`
     query AboutPageInfo {
-      datoCmsSocialProfile {
-        linkedin
-        twitter
-        facebook
-        github
-        email
-      }
-      datoCmsHome {
-        introTextNode {
+      datoCmsAbout {
+        aboutMeTextNode {
           childMarkdownRemark {
             html
           }
@@ -33,39 +38,82 @@ const ABoutPage = () => {
 
   return (
     <>
-      <SEO title="Home" />
+      <SEO title="About" />
       <Layout>
         <div className="flex flex-col items-start">
-          <div className="flex flex-col items-start font-light text-6xl leading-tight">
-            <p>Hello, I'm</p>
-            <p className="text-accent">Nhat Toan.</p>
+          <h1 className="flex flex-col items-start font-black text-3xl leading-tight">{'>'} About Me</h1>
+          <div
+            className="py-6 font-thin text-lg leading-tight text-secondary-text text-left"
+            dangerouslySetInnerHTML={{ __html: datoCmsAbout.aboutMeTextNode.childMarkdownRemark.html }}
+          />
+        </div>
+        <div className="flex flex-col items-start text-left">
+          <h1 className="lex flex-col items-start font-black text-3xl leading-tight">{'>'} My Tech Stack</h1>
+          <div className="py-6 font-thin text-lg leading-tight text-secondary-text text-left">
+            <p>
+              In the brief year that I've been a developer, I've had the chance to work with the following technology
+              either professionally or on the side.
+            </p>
           </div>
-          <div className="flex flex-col items-start mt-6">
-            <h1 className="text-4xl font-normal leading-tight">async {'{'}</h1>
-            <div
-              className="text-2xl font-normal leading-tight text-secondary-text text-left mx-12 my-4"
-              dangerouslySetInnerHTML={{
-                __html: datoCmsHome.introTextNode.childMarkdownRemark.html,
-              }}
-            />
-            <h1 className="text-4xl font-normal leading-tight">{'}'}</h1>
-          </div>
-          <div className="flex flex-row text-4xl mt-12 text-main-text">
-            <a className="mr-5 hover:text-accent" target="_blank" rel="noreferrer" href={datoCmsSocialProfile.twitter}>
-              <Twitter />
-            </a>
-            <a className="mr-5 hover:text-accent" target="_blank" rel="noreferrer" href={datoCmsSocialProfile.facebook}>
-              <Facebook />
-            </a>
-            <a className="mr-5 hover:text-accent" target="_blank" rel="noreferrer" href={datoCmsSocialProfile.github}>
-              <Github />
-            </a>
-            <a className="mr-5 hover:text-accent" target="_blank" rel="noreferrer" href={datoCmsSocialProfile.linkedin}>
-              <Linkedin />
-            </a>
-            <a className="mr-5 hover:text-accent" target="_blank" rel="noreferrer" href={datoCmsSocialProfile.email}>
-              <Mail />
-            </a>
+          <image src="../images/techIcons/icon.png" />
+          <div className="flex flex-row flex-wrap items-start px-8 text-4xl">
+            <span className="mr-8 mb-6">
+              <Html />
+            </span>
+            <span className="mr-8 mb-6">
+              <Css />
+            </span>
+            <span className="mr-8 mb-6">
+              <Javascript />
+            </span>
+            <span className="mr-8 mb-6">
+              <Reactjs />
+            </span>
+            <span className="mr-8 mb-6">
+              <Nodejs />
+            </span>
+            <span className="mr-8 mb-6">
+              <Postgres />
+            </span>
+            <span className="mr-8 mb-6">
+              <Graphql />
+            </span>
+            <span className="mr-8 mb-6">
+              <Jenkins />
+            </span>
+            <span className="mr-8 mb-6">
+              <Webpack />
+            </span>
+            <span className="mr-8 mb-6">
+              <Mongodb />
+            </span>
+            <span className="mr-8 mb-6">
+              <Amazon />
+            </span>
+            <span className="mr-8 mb-6">
+              <Redis />
+            </span>
+            <span className="mr-8 mb-6">
+              <Jest />
+            </span>
+            <span className="mr-8 mb-6">
+              <Docker />
+            </span>
+            <span className="mr-8 mb-6">
+              <Sentry />
+            </span>
+            <span className="mr-8 mb-6">
+              <Redux />
+            </span>
+            <span className="mr-8 mb-6">
+              <Heroku />
+            </span>
+            <span className="mr-8 mb-6">
+              <Apollo />
+            </span>
+            <span className="mr-8 mb-6">
+              <Netlify />
+            </span>
           </div>
         </div>
       </Layout>

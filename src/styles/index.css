@@ -20,8 +20,8 @@ body {
 .theme-light {
   --primary: #fff;
   --secondary: #f9fafb;
-  --text-main: #222;
-  --text-secondary: #838383;
+  --text-main: #000;
+  --text-secondary: #686868;
   --accent: #d23669;
 }
 

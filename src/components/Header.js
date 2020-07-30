@@ -26,7 +26,7 @@ const Header = () => {
   }, [preferDark, toggleThemeHandler, turnOff, turnOn]);
 
   return (
-    <header className="flex flex-row justify-end items-center py-10">
+    <header className="flex flex-row justify-end items-center py-5 sm:py-10">
       <ul className="flex flex-row text-secondary-text text-xl font-medium">
         <li className="mx-4">
           <NavLink to="/">Home</NavLink>

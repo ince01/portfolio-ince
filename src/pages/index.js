@@ -36,9 +36,9 @@ const IndexPage = () => {
       <SEO title="Home" />
       <Layout>
         <div className="flex flex-col items-start">
-          <div className="flex flex-col items-start font-light text-6xl leading-tight">
-            <p>Hello, I'm</p>
-            <p className="text-accent">Nhat Toan.</p>
+          <div className="flex flex-col items-start text-left font-light text-6xl leading-tight">
+            <span>Hello, I'm</span>
+            <span className="text-accent">Nhat Toan.</span>
           </div>
           <div className="flex flex-col items-start mt-6">
             <h1 className="text-4xl font-normal leading-tight">async {'{'}</h1>
@@ -63,7 +63,7 @@ const IndexPage = () => {
             <a className="mr-5 hover:text-accent" target="_blank" rel="noreferrer" href={datoCmsSocialProfile.linkedin}>
               <Linkedin />
             </a>
-            <a className="mr-5 hover:text-accent" target="_blank" rel="noreferrer" href={datoCmsSocialProfile.email}>
+            <a className="mr-5 hover:text-accent" href={datoCmsSocialProfile.email}>
               <Mail />
             </a>
           </div>

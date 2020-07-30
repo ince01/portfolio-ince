@@ -9,13 +9,7 @@ module.exports = {
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `images`,
-        path: `${__dirname}/src/images`,
-      },
-    },
+
     {
       resolve: `gatsby-source-datocms`,
       options: {
@@ -26,6 +20,7 @@ module.exports = {
     `gatsby-transformer-remark`,
     `gatsby-plugin-sharp`,
     `gatsby-plugin-postcss`,
+    `gatsby-plugin-react-svg`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
@@ -35,7 +30,7 @@ module.exports = {
         background_color: `#EE5256`,
         theme_color: `#EE5256`,
         display: `standalone`,
-        icon: `src/images/ince.svg`, // This path is relative to the root of the site.
+        icon: `src/images/favicon.svg`, // This path is relative to the root of the site.
       },
     },
     `gatsby-plugin-offline`,
