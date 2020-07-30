@@ -11,9 +11,9 @@ import {
 import Layout from '../components/Layout';
 import SEO from '../components/SEO';
 
-const IndexPage = () => {
+const ABoutPage = () => {
   const { datoCmsSocialProfile, datoCmsHome } = useStaticQuery(graphql`
-    query HomePageInfo {
+    query AboutPageInfo {
       datoCmsSocialProfile {
         linkedin
         twitter
@@ -73,4 +73,4 @@ const IndexPage = () => {
   );
 };
 
-export default IndexPage;
+export default ABoutPage;

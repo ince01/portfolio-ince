@@ -1,8 +1,11 @@
+require('dotenv').config();
+
 module.exports = {
   siteMetadata: {
     title: `Ince portfolio`,
     description: `Nhat Toan's portfolio`,
     author: `@ince`,
+    copyright: `Ince.`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -13,18 +16,26 @@ module.exports = {
         path: `${__dirname}/src/images`,
       },
     },
+    {
+      resolve: `gatsby-source-datocms`,
+      options: {
+        apiToken: process.env.DATO_API_TOKEN,
+      },
+    },
     `gatsby-transformer-sharp`,
+    `gatsby-transformer-remark`,
     `gatsby-plugin-sharp`,
+    `gatsby-plugin-postcss`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
         name: `Ince portfolio`,
         short_name: `Ince`,
         start_url: `/`,
-        background_color: `#663399`,
-        theme_color: `#663399`,
+        background_color: `#EE5256`,
+        theme_color: `#EE5256`,
         display: `standalone`,
-        icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+        icon: `src/images/ince.svg`, // This path is relative to the root of the site.
       },
     },
     `gatsby-plugin-offline`,
