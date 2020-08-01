@@ -26,7 +26,7 @@ const Header = () => {
   }, [preferDark, toggleThemeHandler, turnOff, turnOn]);
 
   return (
-    <header className="flex flex-row justify-end items-center py-5 sm:py-10">
+    <header className="flex flex-row justify-end items-center py-6">
       <ul className="flex flex-row text-secondary-text text-xl font-medium">
         <li className="mx-4">
           <NavLink to="/">Home</NavLink>
@@ -36,7 +36,7 @@ const Header = () => {
         </li>
       </ul>
       <Toggle
-        className="ml-1 sm:ml-32"
+        className="ml-4 lg:ml-32"
         icons={{
           checked: (
             <img alt="moon" src={moon} width="16" height="16" role="presentation" style={{ pointerEvents: 'none' }} />

@@ -10,7 +10,10 @@ module.exports = {
         accent: 'var(--accent)',
       },
       minHeight: {
-        frame: 'calc(100vh - 110px - 48px)',
+        frame: 'calc(100vh - 78px - 48px)',
+      },
+      fontFamily: {
+        code: 'Source Code Pro,monospace',
       },
     },
   },
