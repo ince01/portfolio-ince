@@ -28,6 +28,7 @@ const ABoutPage = () => {
   const { datoCmsAbout } = useStaticQuery(graphql`
     query AboutPageInfo {
       datoCmsAbout {
+        isShowDownloadButton
         aboutMeTextNode {
           childMarkdownRemark {
             html
@@ -51,8 +52,14 @@ const ABoutPage = () => {
             dangerouslySetInnerHTML={{ __html: datoCmsAbout.aboutMeTextNode.childMarkdownRemark.html }}
           />
           <div className="my-4 w-full flex flex-col items-start">
-            <a href={datoCmsAbout.resume.url} target="_blank" rel="noreferrer">
-              <button className="p-3 rounded-lg bg-accent text-primary">Download my resume</button>
+            <a href={datoCmsAbout.isShowDownloadButton ? datoCmsAbout.resume.url : ''} target="_blank" rel="noreferrer">
+              <button
+                disabled={!datoCmsAbout.isShowDownloadButton}
+                className="p-3 rounded-lg bg-accent text-primary"
+                title={datoCmsAbout.isShowDownloadButton ? 'Download my resume' : 'Sorry, I am unavailable !'}
+              >
+                Download my resume
+              </button>
             </a>
           </div>
         </div>
