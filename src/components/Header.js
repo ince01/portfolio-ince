@@ -31,9 +31,9 @@ const Header = () => {
         <li className="mx-4">
           <NavLink to="/">Home</NavLink>
         </li>
-        <li className="mx-4">
+        {/* <li className="mx-4">
           <NavLink to="/about">About</NavLink>
-        </li>
+        </li> */}
       </ul>
       <Toggle
         className="ml-4 lg:ml-32"
